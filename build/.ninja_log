@@ -1,0 +1,26 @@
+# ninja log v7
+3	2971	1765925887168632381	pass/CMakeFiles/SoftmaxFusionPass.dir/SoftmaxFusion.cpp.o	ffa6cc1f78519692
+3090	3175	1765925704295729338	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+5	5613	1765925374434011243	pass/CMakeFiles/softmax-opt.dir/driver/SoftmaxOptTool.cpp.o	9db65c9c44218020
+3175	4669	1765925704380730243	pass/softmax-opt	7a88670823e2a872
+2	226	1765926030504073230	build.ninja	36fc243ff65fa891
+2	226	1765926030494951995	/home/godine/Documents/on/Class/Fall_25/compilers/semester-project/softmax_fusion/build/cmake_install.cmake	36fc243ff65fa891
+2	226	1765926030503073220	/home/godine/Documents/on/Class/Fall_25/compilers/semester-project/softmax_fusion/build/pass/cmake_install.cmake	36fc243ff65fa891
+4	232	1765926030504073230	build.ninja	36fc243ff65fa891
+4	232	1765926030504073230	/home/godine/Documents/on/Class/Fall_25/compilers/semester-project/softmax_fusion/build/cmake_install.cmake	36fc243ff65fa891
+4	232	1765926030504073230	/home/godine/Documents/on/Class/Fall_25/compilers/semester-project/softmax_fusion/build/pass/cmake_install.cmake	36fc243ff65fa891
+4	72	1765926030520073388	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+4	5582	1765926030520854456	pass/CMakeFiles/softmax-opt.dir/driver/SoftmaxOptTool.cpp.o	9db65c9c44218020
+5582	6963	1765926036098128738	pass/softmax-opt	7a88670823e2a872
+3	3698	1765927270658995181	pass/CMakeFiles/SoftmaxFusionPass.dir/SoftmaxFusion.cpp.o	ffa6cc1f78519692
+3698	3753	1765927274353019288	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+3753	5173	1765927274408019648	pass/softmax-opt	7a88670823e2a872
+5	3788	1765927876387445941	pass/CMakeFiles/SoftmaxFusionPass.dir/SoftmaxFusion.cpp.o	ffa6cc1f78519692
+3788	3842	1765927880170475868	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+3842	5229	1765927880224476295	pass/softmax-opt	7a88670823e2a872
+4	3800	1765930283313432208	pass/CMakeFiles/SoftmaxFusionPass.dir/SoftmaxFusion.cpp.o	ffa6cc1f78519692
+3800	3867	1765930287109465593	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+3867	5261	1765930287176466182	pass/softmax-opt	7a88670823e2a872
+5	3844	1765930355048062543	pass/CMakeFiles/SoftmaxFusionPass.dir/SoftmaxFusion.cpp.o	ffa6cc1f78519692
+3844	3895	1765930358887096246	pass/libSoftmaxFusionPass.a	833112a2794ffc38
+3895	5278	1765930358938096693	pass/softmax-opt	7a88670823e2a872

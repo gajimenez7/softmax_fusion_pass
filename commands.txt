@@ -1,0 +1,29 @@
+# Lower C++ to MLIR with polygeist
+# in root directory
+
+cgeist src/naive_softmax.cpp \
+--function=* \
+-S \
+--raise-scf-to-affine \
+-I /usr/local/lib/clang/22/include \
+-o src/naive_softmax.mlir
+
+# build with ninja
+# in root directory
+
+ninja -C build
+
+# run pass
+./build/pass/softmax-opt src/naive_softmax.mlir   --allow-unregistered-dialect   --canonicalize --cse   --softmax-fusion   --canonicalize -o ./src/fuse_softmax.mlir
+
+# build & benchmark naive
+mlir-opt src/naive_softmax.mlir --lower-affine --convert-scf-to-cf --convert-arith-to-llvm --convert-math-to-llvm --convert-func-to-llvm --finalize-memref-to-llvm --reconcile-unrealized-casts > out/original_llvm.mlir && mlir-translate --mlir-to-llvmir out/original_llvm.mlir > out/original.ll && llc -O3 -filetype=obj out/original.ll -o out/original.o && g++ -O3 -std=c++17 -DVEC_SIZE=10000 src/softmax_driver.cpp out/original.o -o out/bench_original -lm && ./out/bench_original
+
+# build & benchmark fused
+./build/pass/softmax-opt src/naive_softmax.mlir   --allow-unregistered-dialect   --canonicalize --cse   --softmax-fusion   --canonicalize -o ./src/fuse_softmax.mlir && mlir-opt src/fuse_softmax.mlir --lower-affine --convert-scf-to-cf --convert-arith-to-llvm --convert-math-to-llvm --convert-func-to-llvm --finalize-memref-to-llvm --reconcile-unrealized-casts > out/fused_llvm.mlir && mlir-translate --mlir-to-llvmir out/fused_llvm.mlir > out/fused.ll && llc -O3 -filetype=obj out/fused.ll -o out/fused.o && g++ -O3 -std=c++17 -DVEC_SIZE=10000 src/softmax_driver.cpp out/fused.o -o out/bench_fused -lm && ./out/bench_fused
+
+# benchmark naive
+./out/bench_original
+
+# benchmark fused
+./out/bench_fused
